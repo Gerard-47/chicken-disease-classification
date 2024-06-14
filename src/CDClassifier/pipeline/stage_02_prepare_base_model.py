@@ -13,6 +13,7 @@ class PrepareBaseModelTrainingPipeline:
         prepare_base_model_config = config.get_prepare_base_model_config()
         prepare_base_model = PrepareBaseModel(config = prepare_base_model_config)
         prepare_base_model.get_base_model()
+        prepare_base_model.update_base_model()
         logger.info(f">>> stage {STAGE_NAME} completed <<<")
 
 if __name__ == "__main__":
@@ -21,7 +22,7 @@ if __name__ == "__main__":
         logger.info(f">>> Stage {STAGE_NAME} started <<<")
         obj = PrepareBaseModelTrainingPipeline()
         obj.main()
-        logger.info(f">>> stage {STAGE_NAME} complated <<<")
+        logger.info(f">>> stage {STAGE_NAME} completed <<<")
     except Exception as e:
         logger.exception(e)
         raise e
